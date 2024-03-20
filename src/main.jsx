@@ -6,7 +6,10 @@ import App from './App.jsx'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-const queryClient = new QueryClient({})
+// 12 - usamos parámetros por default para manejar el tiempo de fetching de toda la app, staleTime es para manejar el tiempo de fetching y gcTime es para limpiar la cache
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { staleTime: 6000, gcTime: 10 * (60 * 1000) } },
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

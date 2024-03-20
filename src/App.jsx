@@ -16,6 +16,8 @@ function App() {
 
     // 11 - para poner un intervalo de fetching usamos refetchInterval
     refetchInterval: 6000,
+    refetchOnWindowFocus: false,
+    retry: 3,
   })
 
   // 8- definimos la funcion para mutar el estado desde el servidor
